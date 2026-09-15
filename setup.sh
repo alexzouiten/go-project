@@ -22,7 +22,7 @@ for file in $(grep -rl @@OWNER@@ --exclude-dir .git); do
     sed -i "s/@@OWNER@@/$OWNER/g" "$file"
 done
 
-mv cmd/main/main "cmd/main/$REPO_NAME"
+mv cmd/main/main.go "cmd/main/$REPO_NAME"
 mv cmd/main "cmd/$REPO_NAME"
 
 rm setup.sh
