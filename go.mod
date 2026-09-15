@@ -1,3 +1,3 @@
-module github.com/alexzouiten/go-ci-test
+module github.com/@@OWNER@@/@@REPO_NAME@@
 
 go 1.27.1

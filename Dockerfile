@@ -11,8 +11,8 @@ RUN make
 
 FROM gcr.io/distroless/static-debian13:nonroot AS runtime
 
-COPY --from=build /app/bin/go-ci-test /go-ci-test
+COPY --from=build /app/bin/@@REPO_NAME@@ /@@REPO_NAME@@
 WORKDIR /data
 VOLUME ["/data"]
 
-ENTRYPOINT ["/go-ci-test"]
+ENTRYPOINT ["/@@REPO_NAME@@"]

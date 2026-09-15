@@ -1,4 +1,4 @@
-NAME=go-ci-test
+NAME=@@REPO_NAME@@
 MAIN=cmd/$(NAME)/$(NAME).go
 OUT=bin/$(NAME)
 COVERAGE_REPORT=test/coverage.out
