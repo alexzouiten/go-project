@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -euxo pipefail
+
 if [ $# -ne 2 ]; then
     echo "usage: ./setup.sh <owner-name> <repo-name>"
     exit 0
