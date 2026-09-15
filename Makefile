@@ -3,7 +3,6 @@ MAIN=cmd/$(NAME)/$(NAME).go
 OUT=bin/$(NAME)
 COVERAGE_REPORT=test/coverage.out
 COVERAGE_REPORT_HTML=test/coverage.html
-TEST_REPORT=test/test-report.json
 
 .PHONY: all
 all: build
