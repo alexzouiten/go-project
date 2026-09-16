@@ -1,4 +1,4 @@
-name: Snapshots Docker Image
+name: Snapshot docker image
 
 on:
   workflow_dispatch:
