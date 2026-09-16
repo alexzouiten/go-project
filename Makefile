@@ -48,6 +48,10 @@ coverage: test
 	@go tool cover -html=$(COVERAGE_REPORT) -o=$(COVERAGE_REPORT_HTML)
 	@xdg-open $(COVERAGE_REPORT_HTML)
 
+.PHONY: lint
+lint:
+	@golangci-lint run
+
 .PHONY: clean
 clean:
 	@rm -r bin
