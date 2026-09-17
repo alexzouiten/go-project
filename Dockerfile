@@ -1,9 +1,10 @@
 FROM golang:1.27.1-alpine AS base
 
+RUN apk add --no-cache make
+
 WORKDIR /app
 COPY go.mod go.sum* ./
-RUN apk add --no-cache gcc make musl-dev && \
-    go mod download
+RUN go mod download
 COPY . .
 
 FROM base AS build
