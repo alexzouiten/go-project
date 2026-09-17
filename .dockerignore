@@ -1,0 +1,6 @@
+**
+!cmd
+!Dockerfile
+!go.mod
+!go.sum
+!Makefile
