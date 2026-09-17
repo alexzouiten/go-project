@@ -24,16 +24,18 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    env:
+      TARGET: ci
     steps:
       - uses: actions/checkout@v7
 
       - name: Build test image
-        run: docker build --target base --tag ${{ github.repository }}:base .
+        run: docker build --target ${{ env.TARGET }} --tag ${{ github.repository }}:${{ env.TARGET }} .
 
       - name: Run tests
         run: >-
           docker run --rm
           --volume "${{ github.workspace }}:/app"
           --workdir /app
-          ${{ github.repository }}:base
+          ${{ github.repository }}:${{ env.TARGET }}
           make test-cicd

@@ -10,6 +10,9 @@ COPY . .
 FROM base AS build
 RUN make
 
+FROM base AS ci
+RUN apk add --no-cache gcc musl-dev
+
 FROM gcr.io/distroless/static-debian13:nonroot AS runtime
 
 COPY --from=build /app/bin/@@REPO_NAME@@ /@@REPO_NAME@@
