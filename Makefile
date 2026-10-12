@@ -9,7 +9,7 @@ all: build
 
 .PHONY: build
 build:
-	@go build -trimpath -ldflags="-s -w" -o $(OUT) $(MAIN)
+	@CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o $(OUT) $(MAIN)
 
 .PHONY: image
 image:
